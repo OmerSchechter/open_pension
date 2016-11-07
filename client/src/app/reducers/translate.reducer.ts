@@ -4,8 +4,12 @@ import {LANG_HE_NAME} from "../translation/lang-he";
  * Created by ranwahle on 10/10/2016.
  */
 
+export interface trnslateState{
+  currentLanguage:string;
+}
 
-export function TranslateReducer(state = [], action){
+
+export function translateReducer(state = [], action){
   if (!action.type){
     return [LANG_HE_NAME];
   }

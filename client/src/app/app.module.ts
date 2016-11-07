@@ -18,6 +18,11 @@ import {
   FiltersComponent
 } from './components';
 
+import {LogoComponent} from "./components/logo/logo.component";
+import {TranslatePipe} from "./translation/transplate.pipe";
+import {TranslateService} from "./translation/trnanslate.service";
+import {TRANSLATION_PROVIDERS} from "./translation/translation";
+
 // import { ExampleActions } from './actions';
 
 // import { ExapleEffects } from './effects';
@@ -31,7 +36,10 @@ import {
     SearchComponent,
     FooterComponent,
     PaiComponent,
-    FiltersComponent
+    FiltersComponent,
+    LogoComponent,
+    TranslatePipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,7 @@ import {
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     // EffectsModule.run(ExampleEffects),
   ],
-  providers: [],
+  providers: [TranslateService,  ...TRANSLATION_PROVIDERS],
   bootstrap: [OpComponent]
 })
 export class AppModule { }
